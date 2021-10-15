@@ -11,8 +11,16 @@ import LoadingButton from "../static/LoadingButton";
 import { useGlobalContext } from "../context";
 
 const Home = () => {
-  const { loading, error, data, page, totalPages, searchTerm } =
-    useGlobalContext();
+  const {
+    loading,
+    error,
+    data,
+    page,
+    totalPages,
+    searchTerm,
+    filter,
+    category,
+  } = useGlobalContext();
 
   if (error) {
     return <div>Error...</div>;
@@ -22,7 +30,13 @@ const Home = () => {
     <>
       {!loading && !searchTerm ? <HomeImage /> : null}
       <SearchBar />
-      <Grid header={searchTerm ? `Résultas pour ${searchTerm}` : "Résultas"}>
+      <Grid
+        header={
+          searchTerm
+            ? `${filter} ${category} for: ${searchTerm}`
+            : `${filter} ${category}`
+        }
+      >
         {data.map((item) => {
           return <Thumb key={uuidv4()} {...item} />;
         })}
