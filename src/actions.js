@@ -1,0 +1,10 @@
+export const SET_CATEGORY = "SET_CATEGORY";
+export const SET_LOADING = "SET_LOADING";
+export const SET_ERROR = "SET_ERROR";
+export const SET_DATA = "SET_DATA";
+export const LOAD_MORE = "LOAD_MORE";
+export const SET_MOVIE = "SET_MOVIE";
+export const SET_TV = "SET_TV";
+export const SET_SEARCH = "SET_SEARCH";
+export const SET_FILTER = "SET_FILTER";
+export const BACK_HOME = "BACK_HOME";
